@@ -13,12 +13,12 @@ L.LLLLL.LL"""
 with open("day11input.txt") as f:
     data = f.read()
 
-#data = example_data
+data = example_data
 
 kFloor = 0
 kEmpty = 1
 kFull = 2
-kChar = [".","L","#"]
+kChar = [".","E","F"]
 
 def charToType(text):
     if text == ".":
@@ -158,9 +158,11 @@ class State:
 state = State(data)
 steps = 0
 while True:
+    #state.printState()
     changes = state.update2()
     if changes == 0:
         break 
     steps += 1
+#state.printState()
 print(steps)
 print(state.countTotalOccupied())
